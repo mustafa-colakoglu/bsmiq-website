@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>bsmiq — Business specification, made runnable</title>
+    <meta
+      name="description"
+      content="bsmiq turns a clear business specification into the system that runs it. Define entities, rules, and commands — then execute them."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #1a2332;
+        --ink-soft: #3d4a5c;
+        --paper: #f3efe6;
+        --paper-deep: #e6dfd0;
+        --accent: #0f6e56;
+        --accent-deep: #0a4f3d;
+        --line: rgba(26, 35, 50, 0.12);
+        --glow: rgba(15, 110, 86, 0.18);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Manrope", sans-serif;
+        color: var(--ink);
+        background: var(--paper);
+        line-height: 1.55;
+      }
+
+      a {
+        color: var(--accent-deep);
+      }
+
+      a:hover {
+        color: var(--accent);
+      }
+
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: clamp(1.5rem, 4vw, 3rem);
+        overflow: hidden;
+        isolation: isolate;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+        background:
+          radial-gradient(ellipse 80% 60% at 10% 20%, var(--glow), transparent 55%),
+          radial-gradient(ellipse 70% 50% at 90% 80%, rgba(26, 35, 50, 0.08), transparent 50%),
+          linear-gradient(165deg, #f7f3eb 0%, var(--paper) 45%, var(--paper-deep) 100%);
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        opacity: 0.35;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.45'/%3E%3C/svg%3E");
+        mix-blend-mode: multiply;
+        pointer-events: none;
+      }
+
+      .brand {
+        font-family: "Fraunces", Georgia, serif;
+        font-weight: 700;
+        font-size: clamp(3.5rem, 12vw, 7.5rem);
+        letter-spacing: -0.04em;
+        line-height: 0.9;
+        margin: 0 0 1.25rem;
+        color: var(--ink);
+      }
+
+      .headline {
+        font-family: "Fraunces", Georgia, serif;
+        font-weight: 500;
+        font-size: clamp(1.35rem, 3.2vw, 2rem);
+        letter-spacing: -0.02em;
+        line-height: 1.25;
+        max-width: 18ch;
+        margin: 0 0 0.85rem;
+      }
+
+      .lede {
+        margin: 0 0 1.75rem;
+        max-width: 36rem;
+        font-size: 1.05rem;
+        color: var(--ink-soft);
+      }
+
+      .cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.85rem 1.35rem;
+        background: var(--ink);
+        color: var(--paper);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+        border-radius: 2px;
+        width: fit-content;
+        transition: background 160ms ease, transform 160ms ease;
+      }
+
+      .cta:hover {
+        background: var(--accent-deep);
+        color: var(--paper);
+        transform: translateY(-1px);
+      }
+
+      .section {
+        padding: clamp(3rem, 8vw, 5.5rem) clamp(1.5rem, 4vw, 3rem);
+        border-top: 1px solid var(--line);
+      }
+
+      .section h2 {
+        font-family: "Fraunces", Georgia, serif;
+        font-weight: 500;
+        font-size: clamp(1.4rem, 2.5vw, 1.75rem);
+        letter-spacing: -0.02em;
+        margin: 0 0 0.75rem;
+      }
+
+      .section p {
+        margin: 0;
+        max-width: 38rem;
+        color: var(--ink-soft);
+      }
+
+      .footer {
+        padding: clamp(2rem, 5vw, 3rem) clamp(1.5rem, 4vw, 3rem);
+        border-top: 1px solid var(--line);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem 1.5rem;
+        justify-content: space-between;
+        align-items: baseline;
+        font-size: 0.95rem;
+        color: var(--ink-soft);
+      }
+
+      .footer .brand-mark {
+        font-family: "Fraunces", Georgia, serif;
+        font-weight: 700;
+        color: var(--ink);
+        letter-spacing: -0.03em;
+      }
+
+      .footer a {
+        font-weight: 500;
+        text-decoration: none;
+        border-bottom: 1px solid currentColor;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <p class="brand">bsmiq</p>
+      <h1 class="headline">Business specification, made runnable.</h1>
+      <p class="lede">
+        Define how your business works — entities, rules, and commands — in one
+        clear model. Then run that model as the system itself.
+      </p>
+      <a class="cta" href="mailto:mustafa@bsmiq.org">Talk to us</a>
+    </header>
+
+    <section class="section">
+      <h2>One model. The real system.</h2>
+      <p>
+        Most teams describe the business in documents and rebuild it in code.
+        bsmiq keeps the specification as the source of truth: what you declare
+        is what the engine executes.
+      </p>
+    </section>
+
+    <footer class="footer">
+      <span class="brand-mark">bsmiq</span>
+      <span>
+        <a href="mailto:mustafa@bsmiq.org">mustafa@bsmiq.org</a>
+      </span>
+    </footer>
+  </body>
+</html>
