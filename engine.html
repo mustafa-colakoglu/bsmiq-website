@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Engine — bsmiq</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="favicon.svg" />
+    <meta
+      name="description"
+      content="How the bsmiq engine compiles a business specification and executes commands with rules, authority, and audit."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="site-nav">
+      <a class="logo" href="index.html"><img class="logo-mark" src="favicon.svg" alt="" width="28" height="28" />bsmiq</a>
+            <div class="links">
+        <a href="product.html">Product</a>
+        <a aria-current="page" href="engine.html">Engine</a>
+        <a href="why.html">Why</a>
+        <a href="approach.html">Approach</a>
+        <a href="builders.html">Builders</a>
+        <a href="company.html">Company</a>
+        <a class="nav-cta" href="contact.html">Contact</a>
+      </div>
+    </nav>
+
+    <main>
+      <header class="page-hero">
+        <div class="page-hero-inner">
+          <p class="eyebrow">Engine</p>
+          <h1>Compile the company. Then run it.</h1>
+          <p class="intro">
+            The engine is not a code generator. It is the interpreter and
+            guardian of your business specification — from validation through
+            authorized writes.
+          </p>
+        </div>
+      </header>
+
+      <section class="section">
+        <div class="section-inner">
+          <h2>Lifecycle</h2>
+          <ul class="list-plain">
+            <li>
+              <strong>Load &amp; compile</strong>
+              Modules, entities, value types, relationships, commands, rules,
+              workflows, projections, integrations, and auth policies become
+              registries. Broken references fail with diagnostic codes.
+            </li>
+            <li>
+              <strong>Activate</strong>
+              Modules and entity versions enter the runtime when you say they
+              should — not when a deploy script happens to succeed.
+            </li>
+            <li>
+              <strong>Command</strong>
+              A write arrives as a command. Authorization runs. Preconditions
+              and business rules evaluate. Actions apply inside a transaction.
+            </li>
+            <li>
+              <strong>Commit &amp; after</strong>
+              Events are stored. Alerts and notifications schedule. Projections
+              catch up. Audit records what happened and under which authority.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section band">
+        <div class="section-inner split">
+          <div>
+            <h2>Action catalog</h2>
+            <p>
+              The executor speaks a fixed vocabulary — create entity, update
+              entity, delete, relationship changes, workflow transitions, and
+              related primitives. Domain meaning lives in
+              <em>commands and rules</em>, not in inventing new action types for
+              every noun (“stockDecrease” is an update plus rules, not a new
+              verb in the kernel).
+            </p>
+          </div>
+          <div>
+            <h2>Authority</h2>
+            <p>
+              Subjects, roles, ownership, and field-level policies are part of
+              the model. The engine decides access the same way it decides
+              invariants: explicitly, before state changes stick.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-inner stack">
+          <article>
+            <h2>Composition that matches the domain</h2>
+            <p>
+              Independent records link through relationships. Dependent children
+              live as sub-entities under a parent. Arrays of entity references
+              point at peers. The model chooses the shape; the engine enforces
+              it.
+            </p>
+          </article>
+          <article>
+            <h2>Designed for AI authorship</h2>
+            <p>
+              Models can propose definitions. The compiler is the gate. That
+              split is intentional: generative speed on the way in, deterministic
+              execution on the way through.
+            </p>
+          </article>
+        </div>
+        <div class="section-inner" style="margin-top: 2rem">
+          <div class="cta-row">
+            <a class="cta" href="product.html">Back to product</a>
+            <a class="cta secondary" href="approach.html">AI approach</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div>
+          <a class="brand-mark" href="index.html">bsmiq</a>
+                    <p class="meta" style="margin: 0.5rem 0 0">
+            <a href="mailto:mustafa@bsmiq.org">mustafa@bsmiq.org</a><br />
+            <span class="footer-address">Nevruz Sokak, No 40, Daire 1, Güllübağlar Mahallesi, Pendik, İstanbul</span>
+          </p>
+        </div>
+                <div class="footer-nav">
+          <a href="product.html">Product</a>
+          <a href="engine.html">Engine</a>
+          <a href="why.html">Why</a>
+          <a href="approach.html">Approach</a>
+          <a href="builders.html">Builders</a>
+          <a href="company.html">Company</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

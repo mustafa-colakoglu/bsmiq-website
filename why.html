@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Why bsmiq</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="favicon.svg" />
+    <meta
+      name="description"
+      content="Why business software keeps failing: the specification and the system are two different things. bsmiq collapses them."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="site-nav">
+      <a class="logo" href="index.html"><img class="logo-mark" src="favicon.svg" alt="" width="28" height="28" />bsmiq</a>
+            <div class="links">
+        <a href="product.html">Product</a>
+        <a href="engine.html">Engine</a>
+        <a aria-current="page" href="why.html">Why</a>
+        <a href="approach.html">Approach</a>
+        <a href="builders.html">Builders</a>
+        <a href="company.html">Company</a>
+        <a class="nav-cta" href="contact.html">Contact</a>
+      </div>
+    </nav>
+
+    <main>
+      <header class="page-hero">
+        <div class="page-hero-inner">
+          <p class="eyebrow">Why</p>
+          <h1>The gap is the product.</h1>
+          <p class="intro">
+            Every growing company pays a tax: the business changes in language
+            and process, while the software lags behind in tickets and
+            rewrites. That gap is not a documentation problem. It is an
+            architecture problem.
+          </p>
+        </div>
+      </header>
+
+      <section class="section">
+        <div class="section-inner stack">
+          <article>
+            <h2>Two sources of truth</h2>
+            <p>
+              Product managers write specs. Engineers invent schemas. Ops invent
+              exceptions. Support invents workarounds. None of those artifacts
+              are the running system — so drift is guaranteed.
+            </p>
+          </article>
+          <article>
+            <h2>Low-code still hard-codes the business</h2>
+            <p>
+              Forms and workflows help until the domain gets serious: versioned
+              entities, invariants, delegated permissions, projections, login
+              providers. Then you are back to custom engineering — without a
+              clean model of what “correct” means.
+            </p>
+          </article>
+          <article>
+            <h2>AI makes the wrong layer faster</h2>
+            <p>
+              Generating more application code faster does not fix divergence;
+              it accelerates it. What you want AI to accelerate is the
+              <em>specification</em> — and a runtime that will not execute an
+              inconsistent one.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section band">
+        <div class="section-inner split">
+          <div>
+            <h2>Our bet</h2>
+            <p>
+              The durable artifact of a company is not a stack of microservices.
+              It is a precise description of records, rules, and operations —
+              compiled and enforced. Software should be a consequence of that
+              description, not a parallel invention.
+            </p>
+          </div>
+          <div>
+            <p class="quote">
+              If the model is wrong, the engine should refuse. If the model is
+              right, the engine should not need a rewrite.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-inner">
+          <h2>What changes when the model runs</h2>
+          <ul class="list-plain">
+            <li>
+              <strong>New domains stop being new apps</strong>
+              Products, inventory, access, onboarding — modules and definitions
+              instead of greenfield CRUD each time.
+            </li>
+            <li>
+              <strong>Rules stay next to the change</strong>
+              Invariants and pre-action checks are definitions, reviewed like
+              product, executed like code.
+            </li>
+            <li>
+              <strong>Agents have a contract</strong>
+              An LLM can propose a definition change. The compiler and the
+              engine decide whether the world still makes sense.
+            </li>
+          </ul>
+          <div class="cta-row" style="margin-top: 2rem">
+            <a class="cta" href="product.html">Explore the product</a>
+            <a class="cta secondary" href="contact.html">Get in touch</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div>
+          <a class="brand-mark" href="index.html">bsmiq</a>
+                    <p class="meta" style="margin: 0.5rem 0 0">
+            <a href="mailto:mustafa@bsmiq.org">mustafa@bsmiq.org</a><br />
+            <span class="footer-address">Nevruz Sokak, No 40, Daire 1, Güllübağlar Mahallesi, Pendik, İstanbul</span>
+          </p>
+        </div>
+                <div class="footer-nav">
+          <a href="product.html">Product</a>
+          <a href="engine.html">Engine</a>
+          <a href="why.html">Why</a>
+          <a href="approach.html">Approach</a>
+          <a href="builders.html">Builders</a>
+          <a href="company.html">Company</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

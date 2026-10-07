@@ -4,6 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>bsmiq — Business specification, made runnable</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="favicon.svg" />
     <meta
       name="description"
       content="bsmiq turns a clear business specification into the system that runs it. Define entities, rules, and commands — then execute them."
@@ -14,195 +16,159 @@
       href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <style>
-      :root {
-        --ink: #1a2332;
-        --ink-soft: #3d4a5c;
-        --paper: #f3efe6;
-        --paper-deep: #e6dfd0;
-        --accent: #0f6e56;
-        --accent-deep: #0a4f3d;
-        --line: rgba(26, 35, 50, 0.12);
-        --glow: rgba(15, 110, 86, 0.18);
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        margin: 0;
-        min-height: 100vh;
-        font-family: "Manrope", sans-serif;
-        color: var(--ink);
-        background: var(--paper);
-        line-height: 1.55;
-      }
-
-      a {
-        color: var(--accent-deep);
-      }
-
-      a:hover {
-        color: var(--accent);
-      }
-
-      .hero {
-        position: relative;
-        min-height: 100vh;
-        min-height: 100dvh;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        padding: clamp(1.5rem, 4vw, 3rem);
-        overflow: hidden;
-        isolation: isolate;
-      }
-
-      .hero::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        z-index: -2;
-        background:
-          radial-gradient(ellipse 80% 60% at 10% 20%, var(--glow), transparent 55%),
-          radial-gradient(ellipse 70% 50% at 90% 80%, rgba(26, 35, 50, 0.08), transparent 50%),
-          linear-gradient(165deg, #f7f3eb 0%, var(--paper) 45%, var(--paper-deep) 100%);
-      }
-
-      .hero::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        z-index: -1;
-        opacity: 0.35;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.45'/%3E%3C/svg%3E");
-        mix-blend-mode: multiply;
-        pointer-events: none;
-      }
-
-      .brand {
-        font-family: "Fraunces", Georgia, serif;
-        font-weight: 700;
-        font-size: clamp(3.5rem, 12vw, 7.5rem);
-        letter-spacing: -0.04em;
-        line-height: 0.9;
-        margin: 0 0 1.25rem;
-        color: var(--ink);
-      }
-
-      .headline {
-        font-family: "Fraunces", Georgia, serif;
-        font-weight: 500;
-        font-size: clamp(1.35rem, 3.2vw, 2rem);
-        letter-spacing: -0.02em;
-        line-height: 1.25;
-        max-width: 18ch;
-        margin: 0 0 0.85rem;
-      }
-
-      .lede {
-        margin: 0 0 1.75rem;
-        max-width: 36rem;
-        font-size: 1.05rem;
-        color: var(--ink-soft);
-      }
-
-      .cta {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.85rem 1.35rem;
-        background: var(--ink);
-        color: var(--paper);
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 0.95rem;
-        border-radius: 2px;
-        width: fit-content;
-        transition: background 160ms ease, transform 160ms ease;
-      }
-
-      .cta:hover {
-        background: var(--accent-deep);
-        color: var(--paper);
-        transform: translateY(-1px);
-      }
-
-      .section {
-        padding: clamp(3rem, 8vw, 5.5rem) clamp(1.5rem, 4vw, 3rem);
-        border-top: 1px solid var(--line);
-      }
-
-      .section h2 {
-        font-family: "Fraunces", Georgia, serif;
-        font-weight: 500;
-        font-size: clamp(1.4rem, 2.5vw, 1.75rem);
-        letter-spacing: -0.02em;
-        margin: 0 0 0.75rem;
-      }
-
-      .section p {
-        margin: 0;
-        max-width: 38rem;
-        color: var(--ink-soft);
-      }
-
-      .footer {
-        padding: clamp(2rem, 5vw, 3rem) clamp(1.5rem, 4vw, 3rem);
-        border-top: 1px solid var(--line);
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.75rem 1.5rem;
-        justify-content: space-between;
-        align-items: baseline;
-        font-size: 0.95rem;
-        color: var(--ink-soft);
-      }
-
-      .footer .brand-mark {
-        font-family: "Fraunces", Georgia, serif;
-        font-weight: 700;
-        color: var(--ink);
-        letter-spacing: -0.03em;
-      }
-
-      .footer a {
-        font-weight: 500;
-        text-decoration: none;
-        border-bottom: 1px solid currentColor;
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="hero">
-      <p class="brand">bsmiq</p>
-      <h1 class="headline">Business specification, made runnable.</h1>
-      <p class="lede">
-        Define how your business works — entities, rules, and commands — in one
-        clear model. Then run that model as the system itself.
-      </p>
-      <a class="cta" href="mailto:mustafa@bsmiq.org">Talk to us</a>
-    </header>
+    <nav class="site-nav">
+      <a class="logo" href="index.html"><img class="logo-mark" src="favicon.svg" alt="" width="28" height="28" />bsmiq</a>
+            <div class="links">
+        <a href="product.html">Product</a>
+        <a href="engine.html">Engine</a>
+        <a href="why.html">Why</a>
+        <a href="approach.html">Approach</a>
+        <a href="builders.html">Builders</a>
+        <a href="company.html">Company</a>
+        <a class="nav-cta" href="contact.html">Contact</a>
+      </div>
+    </nav>
 
-    <section class="section">
-      <h2>One model. The real system.</h2>
-      <p>
-        Most teams describe the business in documents and rebuild it in code.
-        bsmiq keeps the specification as the source of truth: what you declare
-        is what the engine executes.
-      </p>
-    </section>
+    <main>
+      <header class="hero">
+        <div class="hero-inner">
+          <p class="brand">bsmiq</p>
+          <h1 class="headline">Business specification, made runnable.</h1>
+          <p class="lede">
+            Stop translating the business into code by hand. Declare how the
+            company works — entities, rules, commands, access — and run that
+            model as the system itself.
+          </p>
+          <div class="cta-row">
+            <a class="cta" href="product.html">See the product</a>
+            <a class="cta secondary" href="mailto:mustafa@bsmiq.org">Talk to us</a>
+          </div>
+        </div>
+      </header>
+
+      <section class="section">
+        <div class="section-inner split">
+          <div>
+            <h2>The business model is the application.</h2>
+            <p>
+              Every serious company already has a specification — in people’s
+              heads, in tickets, in half-synced docs. bsmiq makes that
+              specification machine-readable and executable: what you declare is
+              what the engine validates, authorizes, and runs.
+            </p>
+          </div>
+          <div>
+            <h2>Built for the AI era.</h2>
+            <p>
+              LLMs are extraordinary at drafting and refining structure. They
+              are unreliable as the runtime. bsmiq is the durable layer: a typed
+              business model agents and humans can edit, and an engine that
+              executes it with rules, transactions, and audit — not vibes.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section band">
+        <div class="section-inner">
+          <h2>What you get</h2>
+          <ul class="list-plain">
+            <li>
+              <strong>A living specification</strong>
+              Entities, value types, relationships, commands, business rules,
+              workflows, projections, and permissions — one document family the
+              engine compiles and refuses when inconsistent.
+            </li>
+            <li>
+              <strong>Writes that mean something</strong>
+              Record changes go through authorized commands and transactional
+              actions. Rules decide; actions change state; events describe what
+              committed.
+            </li>
+            <li>
+              <strong>A path for operators</strong>
+              Activate modules, manage records, and evolve versions without
+              rebuilding a bespoke CRUD app for every domain.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-inner">
+          <p class="quote">
+            Documents describe the business. Code approximates it. bsmiq runs
+            it.
+            <cite>— the thesis</cite>
+          </p>
+        </div>
+      </section>
+
+      <section class="section band">
+        <div class="section-inner split">
+          <div>
+            <h2>For Claude’s ecosystem</h2>
+            <p>
+              We are building the layer agents should write into: a structured
+              business model with a strict compiler and a trustworthy runtime.
+              That is the partnership we want with Anthropic’s startup program —
+              not another chat wrapper, a durable systems bet.
+            </p>
+          </div>
+          <div>
+            <h2>Explore</h2>
+            <ul class="list-plain">
+              <li>
+                <strong><a href="engine.html">Engine</a></strong>
+                Compile → authorize → commit → audit.
+              </li>
+              <li>
+                <strong><a href="approach.html">Approach</a></strong>
+                Where AI authors, and where it must not run.
+              </li>
+              <li>
+                <strong><a href="builders.html">Builders</a></strong>
+                Who this is for — and who it is not.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="section-inner" style="margin-top: 2rem">
+          <div class="cta-row">
+            <a class="cta" href="why.html">Read why this matters</a>
+            <a
+              class="cta secondary"
+              href="mailto:mustafa@bsmiq.org?subject=Claude%20startup%20program%20%2F%20bsmiq"
+              >Claude program intro</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
 
     <footer class="footer">
-      <span class="brand-mark">bsmiq</span>
-      <span>
-        <a href="mailto:mustafa@bsmiq.org">mustafa@bsmiq.org</a>
-      </span>
+      <div class="footer-inner">
+        <div>
+          <a class="brand-mark" href="index.html">bsmiq</a>
+                    <p class="meta" style="margin: 0.5rem 0 0">
+            Business specification, made runnable.<br />
+            <a href="mailto:mustafa@bsmiq.org">mustafa@bsmiq.org</a><br />
+            <span class="footer-address">Nevruz Sokak, No 40, Daire 1, Güllübağlar Mahallesi, Pendik, İstanbul</span>
+          </p>
+        </div>
+                <div class="footer-nav">
+          <a href="product.html">Product</a>
+          <a href="engine.html">Engine</a>
+          <a href="why.html">Why</a>
+          <a href="approach.html">Approach</a>
+          <a href="builders.html">Builders</a>
+          <a href="company.html">Company</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
